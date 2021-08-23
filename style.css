@@ -8,7 +8,7 @@ body{
 }
 
 #bookInput{
-    display: grid;
+    display: none;
     background-color: chocolate;
     border-radius: 1%;
     grid-column-start: 2;
