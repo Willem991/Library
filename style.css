@@ -7,7 +7,21 @@ body{
     width: 100%;
 }
 
+#bookInput{
+    display: grid;
+    background-color: chocolate;
+    border-radius: 1%;
+    grid-column-start: 2;
+    grid-row-start: 2;
+    align-self: center;
+    justify-self: center;
+    width: 25%;
+    height: 65%;
+    z-index: 1;
+}
+
 #topPanel{
+    display: grid;
     background-image: url("images/topPanel.jpg");
     background-size: cover;
     grid-column-start: 1;
@@ -19,7 +33,18 @@ body{
 
 }
 
+#heading{
+    font-size: 100px;
+
+    align-self: center;
+    justify-self: center;
+    align-items: center;
+    justify-items: center;
+}
+
 #sidePanel{
+
+    display: grid;
 
     background-image: url("images/sidePanel.jpg");
     background-size: cover;
@@ -29,6 +54,14 @@ body{
     grid-row-end: 3;
     width: 200px;
     height: 100%;
+
+    align-items: center;
+    justify-items: center;
+}
+
+#addBtn{
+    width: 60%;
+    height: 30%;
 }
 
 #library{
