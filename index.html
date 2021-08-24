@@ -4,17 +4,20 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
+        <div id="lock"></div>
         <div id="bookInput">
-            <label id="titleLbl" for="titleIn">Title</label>
+            <label class = "lbl" id="titleLbl" for="titleIn">Title</label>
             <input id="titleIn" type="text">
-            <label id="authorLbl" for="authorIn">Author</label>
+            <label class = "lbl" id="authorLbl" for="authorIn">Author</label>
             <input id="authorIn" type="text">
-            <label id="pagesLbl" for="pagesIn">Pages</label>
+            <label class = "lbl" id="pagesLbl" for="pagesIn">Pages</label>
             <input id="pagesIn" type="text">
-            <label id="readLbl" for="readIn">Read</label>
-            <input id="readIn" type="radio">
+            <div id="readContainer">            
+                <label class = "lbl" id="readLbl" for="readIn">Read</label>
+                <input id="readIn" type="radio">
+            </div>
             <button id="cancelBtn">Cancel</button>
-            <button id="confirmBtn"></button>
+            <button id="confirmBtn">Confirm</button>
         </div>
         <div id="sidePanel">
             <button id="addBtn">ADD A BOOK</button>

@@ -7,8 +7,21 @@ body{
     width: 100%;
 }
 
+#lock{
+    display: none;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    background-color: rgba(0, 0, 0, 0.685);
+    background-size: cover;
+    z-index: 1;
+}
+
 #bookInput{
     display: none;
+    grid-template-rows: repeat(10, auto);
+
     background-color: chocolate;
     border-radius: 1%;
     grid-column-start: 2;
@@ -17,7 +30,19 @@ body{
     justify-self: center;
     width: 25%;
     height: 65%;
-    z-index: 1;
+    z-index: 2;
+}
+
+.lbl{
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+
+#readCOntainer{
+    display: grid;
+    grid-template-columns: repeat(2,auto);
+    grid-template-rows: auto;
 }
 
 #topPanel{
