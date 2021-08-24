@@ -28,10 +28,18 @@ function displayBooks(bookArray){
     mainDiv.style.height = "450px";
     mainDiv.style.backgroundColor = "red";
     mainDiv.style.margin = "25px"
+    mainDiv.style.display = "grid";
+    mainDiv.style.gridTemplateRows = "350px 100px";
     mainDiv.id = bookcounter;
 
-    let removeBtn = document.createElement("button");
+    let infotitle = document.createElement('p');
+    infotitle.textContent = `Title: ${bookArray[bookArray.length - 1].title}`;
 
+    let removeBtn = document.createElement("button");
+    removeBtn.style.gridRowStart = "2";
+    removeBtn.style.margin = "20px";
+
+    mainDiv.appendChild(infotitle);
     mainDiv.appendChild(removeBtn);
     library.appendChild(mainDiv);
 };
@@ -74,7 +82,7 @@ confirmBtn.addEventListener("click", () => {
     if(checkForm()){
         let newBook = new book();
         storeBook(newBook);
-        displayBooks();
+        displayBooks(bookStorage);
         hideForm();
     }else{
         alert("Either a value is empty or your pages entry is not a number");
