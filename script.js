@@ -20,6 +20,7 @@ function book(){
 
 function storeBook(book){
         bookStorage[bookStorage.length] = book;
+        localStorage.setItem('bookstorage', JSON.stringify(bookStorage));
 }
 
 function removeBook(btn){
@@ -98,9 +99,16 @@ function checkForm(){
     }else{
         return false;
     }
-}
+};
 
-openBtn.addEventListener('click', showForm)
+function startUp(){
+    if(localStorage.getItem("bookstorage") != null){
+    bookStorage = JSON.parse(localStorage.getItem('bookstorage'));
+    };
+};
+
+
+openBtn.addEventListener('click', showForm);
 
 cancelBtn.addEventListener('click', () =>{
     hideForm();
@@ -117,5 +125,6 @@ confirmBtn.addEventListener("click", () => {
     }
 });
 
+startUp();
 
 
