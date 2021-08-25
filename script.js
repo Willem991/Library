@@ -44,6 +44,7 @@ function displayBooks(bookArray, indx){
     mainDiv.style.alignItems = "center";
     mainDiv.style.justifyItems = "center";
     mainDiv.id = `div${indx}`;
+    mainDiv.classList.add("bookStyle");
 
     let infoTitle = document.createElement('p');
     infoTitle.textContent = `Title: ${bookArray[indx].title}`;

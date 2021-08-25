@@ -40,6 +40,19 @@ body{
     justify-items: center;
 }
 
+.bookStyle{
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(82, 60, 4);
+    text-shadow: 5px 5px 5px goldenrod;
+    border-radius: 10%;
+    border-width: 10px;
+    border-style: ridge;
+    border-color: crimson;
+    background-image: url("images/pages.jpg");
+    background-size: cover;
+}
+
 #readContainer{
     display: grid;
     grid-template-columns: repeat(2,auto);
@@ -88,8 +101,18 @@ body{
 }
 
 #addBtn{
-    width: 60%;
-    height: 30%;
+    border-radius: 10%;
+    border-style: groove;
+    border-width: 5px;
+    background-color: rgb(82, 35, 1);
+    color: rgb(202, 139, 95);
+    font-weight: bold;
+    width: 150px;
+    height: 200px;
+}
+
+#addBtn:hover{
+    border-width: 2px;
 }
 
 #library{
