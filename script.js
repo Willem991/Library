@@ -10,6 +10,7 @@ let bookcounter = 0;
 
 function book(){
     bookcounter++
+    localStorage.setItem('counter', JSON.stringify(bookcounter));
 
     this.title = document.querySelector("#titleIn").value;
     this.author = document.querySelector("#authorIn").value;
@@ -25,8 +26,10 @@ function storeBook(book){
 
 function removeBook(btn){
     let i = btn.id;
-    console.log(i);
-    let mainDiv = document.querySelector(`#div${i}`);
+    console.log(i + "removebook");
+    bookStorage[i-1] = "empty";
+    localStorage.setItem('bookstorage', JSON.stringify(bookStorage));
+    let mainDiv = document.querySelector(`#div${i-1}`);
     library.removeChild(mainDiv);  
 };
 
@@ -40,7 +43,7 @@ function displayBooks(bookArray, indx){
     mainDiv.style.gridTemplateRows = "repeat(5, auto)";
     mainDiv.style.alignItems = "center";
     mainDiv.style.justifyItems = "center";
-    mainDiv.id = `div${bookcounter}`;
+    mainDiv.id = `div${indx}`;
 
     let infoTitle = document.createElement('p');
     infoTitle.textContent = `Title: ${bookArray[indx].title}`;
@@ -58,8 +61,8 @@ function displayBooks(bookArray, indx){
     removeBtn.style.gridRowStart = "5";
     removeBtn.style.margin = "20px";
     removeBtn.textContent = "Remove";
-    removeBtn.id = bookcounter;
-
+    removeBtn.id = indx + 1 ;
+    console.log(indx + 1 + " ID");
     removeBtn.addEventListener('click', () =>{
         removeBook(removeBtn);
     })
@@ -103,7 +106,18 @@ function checkForm(){
 
 function startUp(){
     if(localStorage.getItem("bookstorage") != null){
-    bookStorage = JSON.parse(localStorage.getItem('bookstorage'));
+        bookStorage = JSON.parse(localStorage.getItem('bookstorage'));
+
+        for(let j = 0; j < bookStorage.length; j++){
+            if(bookStorage[j] != "empty"){
+                console.log(j + "startup");
+                displayBooks(bookStorage,j);
+            }
+        };
+    };
+
+    if(localStorage.getItem("counter") != null){
+        bookcounter = JSON.parse(localStorage.getItem('counter'));
     };
 };
 
