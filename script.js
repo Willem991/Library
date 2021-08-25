@@ -37,7 +37,6 @@ function displayBooks(bookArray, indx){
     let mainDiv = document.createElement('div');
     mainDiv.style.width = "250px";
     mainDiv.style.height = "450px";
-    mainDiv.style.backgroundColor = "red";
     mainDiv.style.margin = "25px"
     mainDiv.style.display = "grid";
     mainDiv.style.gridTemplateRows = "repeat(5, auto)";
@@ -47,9 +46,17 @@ function displayBooks(bookArray, indx){
     mainDiv.classList.add("bookStyle");
 
     let infoTitle = document.createElement('p');
+    infoTitle.style.display = "grid";
+    infoTitle.style.alignItems = "center";
+    infoTitle.style.justifyItems = "center";
+    infoTitle.style.textAlign = "center";
     infoTitle.textContent = `Title: ${bookArray[indx].title}`;
 
     let infoAuthor = document.createElement('p');
+    infoAuthor.style.display = "grid";
+    infoAuthor.style.alignItems = "center";
+    infoAuthor.style.justifyItems = "center";
+    infoAuthor.style.textAlign = "center";
     infoAuthor.textContent = `Author: ${bookArray[indx].author}`;
 
     let infoPages = document.createElement('p');
@@ -61,6 +68,9 @@ function displayBooks(bookArray, indx){
     let removeBtn = document.createElement("button");
     removeBtn.style.gridRowStart = "5";
     removeBtn.style.margin = "20px";
+    removeBtn.style.backgroundColor = "goldenrod";
+    removeBtn.style.borderWidth = "5px";
+    removeBtn.style.borderColor = "rgb(82, 60, 4)";
     removeBtn.textContent = "Remove";
     removeBtn.id = indx + 1 ;
     console.log(indx + 1 + " ID");
